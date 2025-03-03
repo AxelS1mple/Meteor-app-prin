@@ -1,6 +1,7 @@
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { Tasks } from '../tasks/tasks';
+import { Users } from '../users/users';
 
 /**
  * Check if user is logged in.
@@ -28,3 +29,21 @@ export async function checkTaskOwner({ taskId }) {
     throw new Meteor.Error('Error', 'Access denied.');
   }
 }
+
+/**
+ * Check if user is logged in and is the task owner.
+ * @param {{ userId: String }}
+ * @throws Will throw an error if user is not logged in or is not the task owner.
+ */
+export async function checkUserOwner({ userId }) {
+  check(userId, String);
+  checkLoggedIn();
+  const user = await Users.findOneAsync({
+    _id: userId,
+    userId: Meteor.userId(),
+  });
+  if (!user) {
+    throw new Meteor.Error('Error', 'Access denied.');
+  }
+}
+

@@ -2,6 +2,7 @@ accounts-base@3.0.3
 accounts-github@1.5.1
 accounts-oauth@1.4.5
 accounts-password@3.0.3
+aldeed:simple-schema@2.0.0
 allow-deny@2.0.0
 autoupdate@2.0.0
 babel-compiler@7.11.2

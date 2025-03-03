@@ -13,8 +13,8 @@ const schema = z.object({
 });
 
 const defaultValues = {
-  username: 'fredmaia',
-  password: 'abc123',
+  username: 'admin',
+  password: '1234',
 };
 
 export function useLogin() {
@@ -38,7 +38,7 @@ export function useLogin() {
       });
       return;
     }
-    navigate('/tasks');
+    navigate('/home');
   };
 
   const loginOrCreateUser = (values) => {

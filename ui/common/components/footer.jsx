@@ -1,14 +1,10 @@
 import {
   Box,
-  ButtonGroup,
-  IconButton,
   Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
-import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'; //Extencion para iconos
 import React from 'react';
 
 export function Footer() {
@@ -34,29 +30,6 @@ export function Footer() {
           align="center"
           justify="space-between"
         >
-          <ButtonGroup variant="ghost" color="gray.600">
-            <IconButton
-              as="a"
-              target="_blank"
-              href="https://github.com/fredmaiaarantes/simpletasks"
-              aria-label="GitHub"
-              icon={<FaGithub fontSize="20px" />}
-            />
-            <IconButton
-              as="a"
-              target="_blank"
-              href="https://twitter.com/fredmaiaarantes"
-              aria-label="Twitter"
-              icon={<FaTwitter fontSize="20px" />}
-            />
-            <IconButton
-              as="a"
-              target="_blank"
-              href="https://linkedin.com/in/fredmaiaarantes"
-              aria-label="LinkedIn"
-              icon={<FaLinkedin fontSize="20px" />}
-            />
-          </ButtonGroup>
         </Stack>
         <Text
           fontSize="xs"
@@ -70,13 +43,7 @@ export function Footer() {
             Meteor.js
           </a>
           ) by{' '}
-          <a
-            href="https://twitter.com/fredmaiaarantes"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @fredmaiaarantes
-          </a>
+          @Axel Nadir Ayala C.
           .
         </Text>
       </Stack>

@@ -15,7 +15,7 @@ export function Layout({ loggedOnly = true, children }) {
   return (
     <>
       <Navbar />
-      <Box maxW="6xl" mx="auto">
+      <Box maxW="8xl" mx="auto">
         {children}
       </Box>
       <Footer />

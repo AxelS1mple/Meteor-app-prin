@@ -12,7 +12,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub'; //icono de github
 import { useUserId } from 'meteor/react-meteor-accounts';
 import React from 'react';
 import { Navigate } from 'react-router-dom';
@@ -30,11 +30,10 @@ export default function SignInPage() {
     register,
     formState: { errors, isSubmitting },
     handleSubmit,
-    handleGithubLogin,
   } = useLogin();
 
   if (userId) {
-    return <Navigate to={routes.tasks} />;
+    return <Navigate to={routes.home} />;
   }
 
   return (
@@ -49,7 +48,7 @@ export default function SignInPage() {
             Sign in to your account
           </Heading>
           <Text fontSize="lg" color={useColorModeValue('gray.600', 'gray.400')}>
-            to start creating your simple tasks
+            to start admin your Tortilleria
           </Text>
         </Stack>
         <Box
@@ -135,11 +134,6 @@ export default function SignInPage() {
                   </Stack>
                 </>
               )}
-              <Stack spacing={10}>
-                <Button onClick={handleGithubLogin} rightIcon={<FaGithub />} ri>
-                  Continue with Github
-                </Button>
-              </Stack>
             </Stack>
           </form>
         </Box>

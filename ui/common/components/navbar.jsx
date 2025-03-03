@@ -3,13 +3,16 @@ import {
   Box,
   Button,
   Flex,
+  Link,
   Stack,
   Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
+import  {Link as routerLink}  from "react-router-dom";
 import { Logout } from './logout';
+import { BottomNavigation } from './bottom-navigation';
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -28,16 +31,20 @@ export function Navbar() {
         align="center"
       >
         <Flex flex={{ base: 1 }} justify="start">
-          <Text
-            as="span"
+          <Button
+            as={routerLink}
+            to="/home"
+            variant="link"
             bgGradient="linear(to-l, #675AAA, #4399E1)"
             bgClip="text"
             fontWeight="bold"
             fontFamily="heading"
             textAlign="left"
+            _hover={{ textDecoration: "none" }}
+            _focus={{ boxShadow: "none" }}
           >
-            Simple Tasks
-          </Text>
+            Tortilleria
+          </Button>
         </Flex>
 
         <Stack
@@ -52,6 +59,7 @@ export function Navbar() {
           >
             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
+          <BottomNavigation />
           <Logout />
         </Stack>
       </Flex>
