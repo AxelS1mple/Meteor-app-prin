@@ -7,7 +7,7 @@ Migrations.add({
   name: 'Add a seed username and password.',
   async up() {
     await Accounts.createUserAsync({
-      username: 'fredmaia',
+      username: 'admin',
       password: 'abc123',
     });
   },
@@ -17,7 +17,7 @@ Migrations.add({
   version: 2,
   name: 'Add a few sample tasks.',
   async up() {
-    const user = await Accounts.findUserByUsername('fredmaia');
+    const user = await Accounts.findUserByUsername('admin');
     await Tasks.insertAsync({
       description: 'Install Node@20',
       done: false,
