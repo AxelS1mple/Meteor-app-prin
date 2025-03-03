@@ -1,7 +1,5 @@
 {
   "name": "my-meteor-app",
-  "author": "@AxelS1mple",
-  "version": "1.0.3",
   "private": true,
   "scripts": {
     "start": "meteor --exclude-archs web.browser.legacy,web.cordova --settings private/settings.json",
@@ -46,12 +44,6 @@
       "server": "api/main.js"
     },
     "testModule": "tests/main.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "meteor npm test && lint-staged",
-      "post-commit": "git update-index --again"
-    }
   },
   "lint-staged": {
     "*.{js,jsx}": [
